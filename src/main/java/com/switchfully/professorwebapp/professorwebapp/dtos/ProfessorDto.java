@@ -9,11 +9,11 @@ public class ProfessorDto {
         return id;
     }
 
-    public String getfirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public String getlastName() {
+    public String getLastName() {
         return lastName;
     }
 
@@ -22,12 +22,12 @@ public class ProfessorDto {
         return this;
     }
 
-    public ProfessorDto setfirstName(String firstName) {
+    public ProfessorDto setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public ProfessorDto setlastName(String lastName) {
+    public ProfessorDto setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
