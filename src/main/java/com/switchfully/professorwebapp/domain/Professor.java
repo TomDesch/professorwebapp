@@ -4,7 +4,7 @@ public class Professor {
 
 
 
-//    Create a controller specific for the professors resource
+//    Create a controller specific for the professor resource
 //    Make it so that we can:
 //    Create a new professor.
 //    Get all the professors.
