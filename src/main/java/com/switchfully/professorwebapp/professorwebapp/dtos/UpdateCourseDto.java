@@ -34,6 +34,4 @@ public class UpdateCourseDto {
     public Professor getProfessor() {
         return professor;
     }
-
-
 }
