@@ -28,5 +28,13 @@ public class ProfessorRepository {
         return foundProfessor;
     }
 
+    public void deleteProfessor(String id) throws IllegalArgumentException {
+        var foundProfessor = professorsById.get(id);
+        if (foundProfessor == null) {
+            throw new IllegalArgumentException("No professor could be found for id " + id);
+        }
+        professorsById.remove(id);
+    }
+
     public Collection<Professor> getAll() {return professorsById.values();}
 }
