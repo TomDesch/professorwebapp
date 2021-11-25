@@ -9,6 +9,9 @@ import com.switchfully.professorwebapp.domain.ProfessorRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -51,6 +54,16 @@ public class ProfessorController {
         return professorMapper.mapToDto(professor);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(produces = APPLICATION_JSON_VALUE)
+    public List<ProfessorDto> getAllProfessors() {
+        return professorRepository.getAll().stream().map(prof -> professorMapper.mapToDto(prof)).collect(Collectors.toList());
+    }
 
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(produces = APPLICATION_JSON_VALUE, path = "{id}")
+    public ProfessorDto getAllProfessors(@PathVariable String id) {
+        return professorMapper.mapToDto(professorRepository.getById(id));
+    }
 
 }
