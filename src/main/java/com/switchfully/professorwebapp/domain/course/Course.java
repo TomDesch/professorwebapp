@@ -11,6 +11,10 @@ public class Course {
     private int studyPoints;
     private Professor professor;
 
+    // todo make it so theres only 1 -6 SP available
+    // Check prof exists by id or object based
+
+
     public Course(String title, int studyPoints, Professor professor) {
         this.id = UUID.randomUUID().toString();
         this.title = title;
