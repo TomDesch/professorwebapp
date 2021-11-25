@@ -1,8 +1,6 @@
-package com.switchfully.professorwebapp.api;
+package com.switchfully.professorwebapp.api.dtos.professor;
 
-import com.switchfully.professorwebapp.api.dtos.CreateProfessorDto;
-import com.switchfully.professorwebapp.api.dtos.ProfessorDto;
-import com.switchfully.professorwebapp.domain.Professor;
+import com.switchfully.professorwebapp.domain.professor.Professor;
 
 public class ProfessorMapper {
 

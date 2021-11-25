@@ -1,4 +1,4 @@
-package com.switchfully.professorwebapp.domain;
+package com.switchfully.professorwebapp.domain.professor;
 
 import org.springframework.stereotype.Component;
 

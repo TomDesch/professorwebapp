@@ -1,4 +1,4 @@
-package com.switchfully.professorwebapp.domain;
+package com.switchfully.professorwebapp.domain.professor;
 
 import java.util.Objects;
 import java.util.UUID;

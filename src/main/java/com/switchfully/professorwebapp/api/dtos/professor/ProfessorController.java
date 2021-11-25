@@ -1,10 +1,7 @@
-package com.switchfully.professorwebapp.api;
+package com.switchfully.professorwebapp.api.dtos.professor;
 
-import com.switchfully.professorwebapp.api.dtos.CreateProfessorDto;
-import com.switchfully.professorwebapp.api.dtos.UpdateProfessorDto;
-import com.switchfully.professorwebapp.domain.Professor;
-import com.switchfully.professorwebapp.api.dtos.ProfessorDto;
-import com.switchfully.professorwebapp.domain.ProfessorRepository;
+import com.switchfully.professorwebapp.domain.professor.Professor;
+import com.switchfully.professorwebapp.domain.professor.ProfessorRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +15,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class ProfessorController {
 //    Furthermore, think about todo edge-cases, e.g.:
 
-    private ProfessorRepository professorRepository;
-    private ProfessorMapper professorMapper;
+    private final ProfessorRepository professorRepository;
+    private final ProfessorMapper professorMapper;
 
     public ProfessorController(ProfessorRepository professorRepository) {
         this.professorRepository = professorRepository;
@@ -52,7 +49,7 @@ public class ProfessorController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(produces = APPLICATION_JSON_VALUE)
     public List<ProfessorDto> getAllProfessors() {
-        return professorRepository.getAll().stream().map(prof -> professorMapper.mapToDto(prof)).collect(Collectors.toList());
+        return professorRepository.getAll().stream().map(professorMapper::mapToDto).collect(Collectors.toList());
     }
 
     @ResponseStatus(HttpStatus.OK)

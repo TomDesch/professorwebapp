@@ -1,15 +1,15 @@
-package com.switchfully.professorwebapp.api.dtos;
+package com.switchfully.professorwebapp.api.dtos.professor;
 
-public class UpdateProfessorDto {
+public class CreateProfessorDto {
     private String firstName;
     private String lastName;
 
-    public UpdateProfessorDto setFirstName(String firstName) {
+    public CreateProfessorDto setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public UpdateProfessorDto setLastName(String lastName) {
+    public CreateProfessorDto setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }

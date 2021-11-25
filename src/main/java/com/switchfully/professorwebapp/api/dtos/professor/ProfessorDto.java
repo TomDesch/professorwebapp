@@ -1,4 +1,4 @@
-package com.switchfully.professorwebapp.api.dtos;
+package com.switchfully.professorwebapp.api.dtos.professor;
 
 public class ProfessorDto {
     private String id;

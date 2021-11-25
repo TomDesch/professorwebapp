@@ -1,6 +1,6 @@
-package com.switchfully.professorwebapp.api.dtos;
+package com.switchfully.professorwebapp.api.dtos.course;
 
-import com.switchfully.professorwebapp.domain.Professor;
+import com.switchfully.professorwebapp.domain.professor.Professor;
 
 public class CourseDto {
     private String id;
