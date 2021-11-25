@@ -1,16 +1,16 @@
-package com.switchfully.professorwebapp.professorwebapp.dtos;
+package com.switchfully.professorwebapp.api.dtos;
 
 public class CreateProfessorDto {
 
     private String firstName;
-    private int lastName;
+    private String lastName;
 
     public CreateProfessorDto setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public CreateProfessorDto setLastName(int lastName) {
+    public CreateProfessorDto setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -19,7 +19,7 @@ public class CreateProfessorDto {
         return firstName;
     }
 
-    public int getLastName() {
+    public String getLastName() {
         return lastName;
     }
 }

@@ -1,4 +1,4 @@
-package com.switchfully.professorwebapp.professorwebapp.dtos;
+package com.switchfully.professorwebapp.api.dtos;
 
 import com.switchfully.professorwebapp.domain.Professor;
 
