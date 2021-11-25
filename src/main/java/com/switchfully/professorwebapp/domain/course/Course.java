@@ -1,6 +1,8 @@
 package com.switchfully.professorwebapp.domain.course;
 
+import com.switchfully.professorwebapp.api.dtos.professor.ProfessorController;
 import com.switchfully.professorwebapp.domain.professor.Professor;
+import com.switchfully.professorwebapp.domain.professor.ProfessorRepository;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -10,17 +12,31 @@ public class Course {
     private String title;
     private int studyPoints;
     private Professor professor;
+    private static final int STUDY_POINT_RANGE = 6;
+    // private static final ProfessorRepository professorReposit
+    // todo How to make sure its the same repo used in the prof controller?
 
-    // todo make it so theres only 1 -6 SP available
     // Check prof exists by id or object based
 
 
     public Course(String title, int studyPoints, Professor professor) {
-        this.id = UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString(); // What if, somehow, the same UUID is generated twice?
         this.title = title;
-        this.studyPoints = studyPoints;
+        this.studyPoints = validateStudyPointRange(studyPoints);
         this.professor = professor;
     }
+
+    private int validateStudyPointRange(int points) throws IllegalArgumentException {
+        if (points < 1 || points > STUDY_POINT_RANGE) {
+            throw new IllegalArgumentException("This amount of studypoints needs to be within 1 and "
+                    + STUDY_POINT_RANGE + ". The provided amount was: " + points);
+        }
+        return points;
+    }
+//
+//    private Professor professorIsActive(Professor professor) {
+//        if () throw
+//    }
 
     public String getId() {
         return id;

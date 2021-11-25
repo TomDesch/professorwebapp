@@ -21,6 +21,11 @@ public class ProfessorController {
     //todo make it so you can filter on study points
     // when no query parameter is defined ,all courses should be returned
 
+
+    public ProfessorRepository getProfessorRepository() {
+        return professorRepository;
+    }
+
     public ProfessorController(ProfessorRepository professorRepository) {
         this.professorRepository = professorRepository;
         this.professorMapper = new ProfessorMapper();
