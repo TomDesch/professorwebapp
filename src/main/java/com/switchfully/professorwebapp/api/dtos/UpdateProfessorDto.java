@@ -2,14 +2,14 @@ package com.switchfully.professorwebapp.api.dtos;
 
 public class UpdateProfessorDto {
     private String firstName;
-    private int lastName;
+    private String lastName;
 
     public UpdateProfessorDto setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public UpdateProfessorDto setLastName(int lastName) {
+    public UpdateProfessorDto setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -18,7 +18,7 @@ public class UpdateProfessorDto {
         return firstName;
     }
 
-    public int getLastName() {
+    public String getLastName() {
         return lastName;
     }
 }

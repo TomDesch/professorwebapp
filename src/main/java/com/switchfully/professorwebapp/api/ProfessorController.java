@@ -2,6 +2,7 @@ package com.switchfully.professorwebapp.api;
 
 
 import com.switchfully.professorwebapp.api.dtos.CreateProfessorDto;
+import com.switchfully.professorwebapp.api.dtos.UpdateProfessorDto;
 import com.switchfully.professorwebapp.domain.Professor;
 import com.switchfully.professorwebapp.api.dtos.ProfessorDto;
 import com.switchfully.professorwebapp.domain.ProfessorRepository;
@@ -40,5 +41,16 @@ public class ProfessorController {
         Professor savedProf = professorRepository.save(professor);
         return professorMapper.mapToDto(savedProf);
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE, path = "{id}")
+    public ProfessorDto updateProfessor(@RequestBody UpdateProfessorDto updateProfessorDto, @PathVariable String id) {
+        Professor professor = professorRepository.getById(id);
+        professor.setFirstName(updateProfessorDto.getFirstName());
+        professor.setLastName(updateProfessorDto.getLastName());
+        return professorMapper.mapToDto(professor);
+    }
+
+
 
 }
